@@ -10,7 +10,7 @@
 # Contribute
 Mochamad Adam Lazuardi Agung : Participate in discussion<br>
 Farhan Maulana Azis : Participate in discussion. pondpage.vue <br>
-Muhammad Alfin Khaerudin : Participate in discussion. <br>
+Muhammad Alfin Khaerudin : Participate in discussion. ragister.vue <br>
 Fikri Ilham Arifin : Participate in discussion. making ionic project<br>
 Danan Danurwenda Adi Kusuma : Participate in discussion.<br>
 Handrian Wibisono : Participate in discussion. <br>
