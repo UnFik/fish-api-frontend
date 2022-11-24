@@ -44,7 +44,7 @@
             <ion-row class="ion-align-items-center">
               <!-- <font-awesome-icon icon="fa-solid fa-calendar-days" style="margin-right: 10px;" /> -->
               <ion-icon src="icon/calendar-number-sharp.svg" style="margin-right: 10px;"></ion-icon>
-              <ion-card-subtitle>{{ pond.created_at }} Hari</ion-card-subtitle>
+              <ion-card-subtitle>{{ findDay(pond.created_at) }} Hari</ion-card-subtitle>
             </ion-row>
             <ion-row class="ion-align-items-center">
               <!-- <font-awesome-icon icon="fa-solid fa-fish-fins" style="margin-right: 8px;" /> -->
@@ -82,13 +82,25 @@ export default defineComponent({
     IonPage,
     IonToolbar,
   },
+  methods: {
+    findDay(date: string) {
+      const date_string = date.split('/');
+      const date_created = Number(date_string[0])
+      const dateNow = new Date();
+      const dateDay = Number(dateNow.getDate());
+      return dateDay - date_created;
+      
+    },
+  },
   setup() {
     const ponds = ref();
     onMounted(async () => {
       const response = await axios.get('http://localhost:5000/API/ponds')
+      ponds.value = response.data
+      console.log(response.data)
     });
     return {
-
+      ponds
     }
   }
 });
